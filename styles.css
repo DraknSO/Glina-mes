@@ -1,0 +1,242 @@
+body {
+    background-color: #1a1a2e;
+    color: #e6e6e6;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+h1 {
+    color: #f2a900;
+    text-align: center;
+}
+/* --- Стили для блоков --- */
+
+header {
+    background-color: #0f0f1a; /* Делаем шапку чуть темнее фона */
+    padding: 20px;
+    border-bottom: 3px solid #f2a900; /* Добавляем красивую желтую линию снизу */
+    text-align: center; /* Центрируем текст шапки */
+}
+
+/* Убираем старое центрирование у h1, так как теперь центрируется вся шапка */
+h1 {
+    color: #f2a900;
+    margin-bottom: 5px; /* Уменьшаем отступ снизу */
+}
+
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #22223b;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0, 0.3);
+    
+    /* НОВАЯ СТРОЧКА: Применяем нашу анимацию */
+    animation: fadeInDown 0.8s ease-out; 
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #888888; /* Делаем текст подвала блеклым */
+}
+/* --- Стили для интерактивной кнопки --- */
+
+button {
+    background-color: #f2a900; /* Желто-оранжевый цвет, как у наших заголовков */
+    color: #0f0f1a; /* Темный текст для контраста */
+    font-size: 18px; /* Делаем текст крупнее */
+    font-weight: bold; /* Делаем шрифт жирным */
+    padding: 15px 30px; /* Внутренние отступы: 15px сверху/снизу, 30px по бокам */
+    border: none; /* Убираем стандартную скучную рамку */
+    border-radius: 25px; /* Сильно закругляем края (получается "таблетка") */
+    cursor: pointer; /* Меняем курсор на "указательный палец" при наведении */
+    transition: background-color 0.3s, transform 0.2s; /* Делаем все изменения плавными */
+}
+
+/* Состояние при наведении мышки */
+button:hover {
+    background-color: #ffc133; /* Делаем цвет чуть светлее */
+    transform: scale(1.05); /* Слегка увеличиваем кнопку (эффект "приближения") */
+}
+
+/* Состояние в момент самого клика (когда зажата мышка) */
+button:active {
+    transform: scale(0.95); /* Слегка уменьшаем (эффект физического "нажатия") */
+}
+/* --- Стили для меню навигации --- */
+
+nav {
+    margin-top: 20px; /* Отступаем вниз от заголовков в шапке */
+}
+
+nav a {
+    color: #e6e6e6; /* Делаем ссылки меню светлыми */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-size: 18px;
+    margin: 0 15px; /* Добавляем расстояние между ссылками по бокам */
+    padding: 5px 15px; /* Добавляем внутренние отступы, чтобы сделать "кнопку" */
+    border-radius: 5px; /* Слегка закругляем края */
+    transition: background-color 0.3s, color 0.3s; /* Плавная смена цвета */
+}
+
+nav a:hover {
+    background-color: #f2a900; /* Появляется желтый фон при наведении */
+    color: #0f0f1a; /* Текст становится темным */
+}
+/* --- Стили для формы обратной связи --- */
+
+form {
+    display: flex; /* Включаем "гибкую" сетку */
+    flex-direction: column; /* Выстраиваем элементы сверху вниз (в колонку) */
+    max-width: 500px; /* Ограничиваем ширину формы */
+    margin: 0 auto; /* Центрируем форму внутри блока main */
+}
+
+label {
+    margin-top: 15px; /* Отступ сверху для каждого названия поля */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4db8ff; /* Голубой цвет, как у подзаголовков */
+}
+
+input, textarea {
+    padding: 12px;
+    background-color: #0f0f1a; /* Темный фон для полей ввода */
+    color: #e6e6e6; /* Светлый текст внутри полей */
+    border: 1px solid #4db8ff; /* Тонкая голубая рамка */
+    border-radius: 8px; /* Слегка закругляем углы */
+    font-family: inherit; /* Наследуем шрифт от всего сайта */
+    font-size: 16px; /* Делаем текст достаточно крупным */
+}
+
+/* Эффект свечения, когда мы кликаем на поле ввода (псевдокласс :focus) */
+input:focus, textarea:focus {
+    outline: none; /* Убираем стандартную системную обводку */
+    border-color: #f2a900; /* Рамка становится желтой */
+    box-shadow: 0 0 8px rgba(242, 169, 0, 0.5); /* Добавляем желтое свечение вокруг */
+}
+
+form button {
+    margin-top: 25px; /* Отодвигаем кнопку отправки вниз от текстового поля */
+}
+/* --- Стили для Галереи (CSS Grid) --- */
+
+.gallery-grid {
+    display: grid; /* Включаем сеточный режим */
+    /* Самая важная строчка: автоматическое создание колонок */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* Расстояние между карточками (и по вертикали, и по горизонтали) */
+    margin-top: 30px;
+}
+
+.photo-card {
+    background-color: #0f0f1a; /* Темный фон для самой карточки */
+    padding: 15px; /* Внутренние отступы, чтобы картинка не прилипала к краям */
+    border-radius: 12px;
+    text-align: center; /* Центрируем подпись */
+    border: 1px solid #22223b;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Делаем так, чтобы картинка всегда вписывалась в размер своей карточки */
+.photo-card img {
+    width: 100%; /* Картинка занимает 100% ширины карточки */
+    height: 200px; /* Фиксируем высоту, чтобы все карточки были ровными */
+    object-fit: cover; /* Обрезаем картинку так, чтобы она красиво заполнила эти 200px без сплющивания */
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.photo-card p {
+    margin: 0;
+    color: #4db8ff;
+    font-size: 14px;
+}
+
+/* Эффект при наведении на карточку */
+.photo-card:hover {
+    transform: translateY(-5px); /* Карточка слегка "подпрыгивает" вверх */
+    box-shadow: 0 8px 15px rgba(0,0,0, 0.5); /* Тень становится гуще */
+    border-color: #f2a900; /* Рамка подсвечивается желтым */
+}
+/* --- Стили для карточки "Обо мне" (Flexbox) --- */
+
+.about-card {
+    display: flex; /* Включаем магию Flexbox */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    background-color: #0f0f1a;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-left: 4px solid #f2a900; /* Желтая линия слева для красоты */
+    box-shadow: 0 4px 10px rgba(0,0,0, 0.4);
+}
+
+.about-avatar img {
+    width: 120px; /* Фиксируем размер аватарки */
+    height: 120px;
+    border-radius: 50%; /* Делаем картинку абсолютно круглой */
+    object-fit: cover;
+    border: 3px solid #4db8ff; /* Голубая рамка вокруг фото */
+}
+
+.about-text {
+    margin-left: 20px; /* Отодвигаем текст от картинки вправо */
+}
+
+.about-text h3 {
+    margin-top: 0;
+    color: #f2a900;
+}
+
+.about-text p {
+    margin-bottom: 10px;
+    line-height: 1.5; /* Делаем межстрочный интервал чуть больше для удобства чтения */
+}
+/* --- АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ТЕЛЕФОНОВ --- */
+
+/* Эти правила сработают ТОЛЬКО если ширина экрана 600px или меньше */
+@media (max-width: 600px) {
+    
+    /* Меняем направление карточки с горизонтального на вертикальное */
+    .about-card {
+        flex-direction: column; /* Элементы выстраиваются в колонку */
+        text-align: center; /* Центрируем весь текст */
+        border-left: none; /* Убираем желтую линию слева */
+        border-top: 4px solid #f2a900; /* И переносим ее наверх */
+    }
+
+    .about-text {
+        margin-left: 0; /* Убираем отступ слева, который был нужен на ПК */
+        margin-top: 15px; /* Добавляем отступ сверху, чтобы текст отодвинулся от фото */
+    }
+
+    /* Уменьшаем отступы у главного контейнера, чтобы сэкономить место на экране */
+    main {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    /* Делаем ссылки в меню чуть компактнее */
+    nav a {
+        display: inline-block;
+        margin: 5px;
+    }
+}
+/* --- Анимации --- */
+
+/* Сценарий плавного появления с движением вниз */
+@keyframes fadeInDown {
+    from {
+        opacity: 0; /* В начале элемент полностью прозрачный */
+        transform: translateY(-30px); /* И сдвинут на 30 пикселей вверх */
+    }
+    to {
+        opacity: 1; /* В конце элемент становится полностью видимым */
+        transform: translateY(0); /* И возвращается на свое нормальное место */
+    }
+}
